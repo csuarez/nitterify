@@ -1,0 +1,146 @@
+body {
+  width: 240px;
+  margin: 0;
+  padding: 16px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  background: #fff;
+  color: #1c1b22;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #9b9b9b;
+  border-radius: 28px;
+  transition: background 0.15s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+input:checked + .slider {
+  background: #1d9bf0;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+input:disabled + .slider {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#status {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #6f6f77;
+}
+
+form {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e6;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+}
+
+#instance {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid #c4c4cc;
+  border-radius: 6px;
+  background: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 13px;
+  border: 0;
+  border-radius: 6px;
+  background: #1d9bf0;
+  color: #fff;
+  cursor: pointer;
+}
+
+#error {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #d70022;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #2b2a33;
+    color: #fbfbfe;
+  }
+
+  #status {
+    color: #b1b1b9;
+  }
+
+  form {
+    border-top-color: #52525e;
+  }
+
+  #instance {
+    border-color: #6f6f77;
+  }
+
+  #error {
+    color: #ff848b;
+  }
+}

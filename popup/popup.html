@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon.svg" alt="" width="24" height="24" />
+      <h1>Nitterify</h1>
+    </header>
+    <label class="switch">
+      <input type="checkbox" id="toggle" />
+      <span class="slider"></span>
+    </label>
+    <p id="status">…</p>
+    <form id="instance-form">
+      <label for="instance">Nitter instance</label>
+      <div class="row">
+        <input id="instance" type="text" list="known" placeholder="e.g. xcancel.com"
+               autocomplete="off" spellcheck="false" />
+        <button type="submit">Save</button>
+      </div>
+      <datalist id="known">
+        <option value="xcancel.com"></option>
+        <option value="nitter.net"></option>
+        <option value="nitter.poast.org"></option>
+        <option value="nitter.privacydev.net"></option>
+      </datalist>
+      <p id="error" hidden></p>
+    </form>
+    <script src="popup.js"></script>
+  </body>
+</html>
